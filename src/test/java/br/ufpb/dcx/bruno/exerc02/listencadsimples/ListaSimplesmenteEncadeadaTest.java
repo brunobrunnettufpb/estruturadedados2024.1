@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 public class ListaSimplesmenteEncadeadaTest {
     @Test
-    void testaAdd() {
+    void testaListaSimples() {
         ListaSimplesmenteEncadeada lista = new ListaSimplesmenteEncadeada();
 
         lista.add(5);

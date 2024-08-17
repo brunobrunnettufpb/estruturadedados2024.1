@@ -3,26 +3,26 @@ package br.ufpb.dcx.bruno.exerc02.listencadsimples;
 public class ListaSimplesmenteEncadeada {
     Node head;
 
-    public void add(int data) {
-        Node newNode = new Node(data);
+    public void add(int dado) {
+        Node newNode = new Node(dado);
 
         if (head == null) head = newNode;
         else {
-            Node current = head;
-            while (current.next != null) {
-                current = current.next;
+            Node atual = head;
+            while (atual.proximo != null) {
+                atual = atual.proximo;
             }
 
-            current.next = newNode;
+            atual.proximo = newNode;
         }
     }
 
     public void printList() {
-        Node current = head;
+        Node atual = head;
 
-        while (current != null) {
-            System.out.print(current.data + " ");
-            current = current.next;
+        while (atual != null) {
+            System.out.print(atual.dado + " ");
+            atual = atual.proximo;
         }
     }
 }
