@@ -13,6 +13,8 @@ public class SimpleLinkedList {
                 current = current.next;
             }
             current.next = newNode;
+
+            //teste
         }
     }
 }
