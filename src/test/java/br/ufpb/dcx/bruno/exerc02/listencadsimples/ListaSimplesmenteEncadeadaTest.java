@@ -5,11 +5,11 @@ import org.junit.jupiter.api.Test;
 public class ListaSimplesmenteEncadeadaTest {
     @Test
     void testaListaSimples() {
-        ListaSimplesmenteEncadeada lista = new ListaSimplesmenteEncadeada();
+        ListaSimplesmenteEncadeada lista = new ListaSimplesmenteEncadeada<>();
 
-        Node node1 = new Node(5);
+        Node node1 = new Node("Teste");
         Node node2 = new Node(10);
-        Node node3 = new Node(20);
+        Node node3 = new Node(20.0);
         Node node4 = new Node(40);
         Node node5 = new Node(100);
 
@@ -19,13 +19,7 @@ public class ListaSimplesmenteEncadeadaTest {
         lista.add(node4);
         lista.addInicio(node5);
 
-        lista.printList();
-
-        System.out.println();
-        lista.printIfExist(new Node(20));
-
-        System.out.print("\n\n");
-        lista.remove(new Node(20));
-        lista.printList();
+        System.out.println(lista);
+        lista.remove(20);
     }
 }
