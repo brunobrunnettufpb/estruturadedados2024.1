@@ -52,42 +52,15 @@ public class ListaSimplesmenteEncadeada {
         }
     }
 
-    public void printIfExist(Node node) {
-        Node node2 = procurar(node);
-        if (node2 != null) System.out.print(node.dado);
-    }
-    public void printList() {
+    public String toString() {
         Node atual = head;
+        String str = "";
 
         while (atual != null) {
-            System.out.print(atual.dado + " ");
+            str += (atual.dado + " ");
             atual = atual.proximo;
         }
+
+        return str;
     }
 }
-
-/*public class SimpleLinkedList {
-    Node head;
-
-    public void add(int data) {
-        Node newNode = new Node(data);
-
-        if (head == null) head = newNode;
-        else {
-            Node current = head;
-            while (current.next != null) {
-                current = current.next;
-            }
-
-            current.next = newNode;
-        }
-    }
-
-    public void printList() {
-        Node current = head;
-        while (current != null) {
-            System.out.print(current.data + " ");
-            current = current.next;
-        }
-    }
-}*/
