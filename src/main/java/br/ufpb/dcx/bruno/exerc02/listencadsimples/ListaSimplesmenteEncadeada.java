@@ -56,38 +56,25 @@ public class ListaSimplesmenteEncadeada<Dado> {
         if (head == null) return null;
 
         current = head;
-        if (head.dado == dado) {
+        Node old = current;
+        if (current.dado == dado) {
             head = head.next;
             n--;
             return current.dado;
         }
         else {
-            if (head == tail) {
-                head = null;
-                tail = null;
+            while (current != null && current.dado != dado) {
+                old = current;
+                current = current.next;
+            }
+
+            if (current == null) return null;
+            else {
+                old.next = current.next;
                 n--;
                 return current.dado;
             }
-            else {
-                while (current.next != null && current.next.dado != dado) current = current.next;
-                if (current.next != null) {
-                    Dado retornaDado;
-                    if (current.next == tail) {
-                        tail = current;
-                        retornaDado = tail.dado;
-                    }
-                    else {
-                        retornaDado = current.next.dado;
-                        current.next = current.next.next;
-                    }
-
-                    n--;
-                    return retornaDado;
-                }
-            }
         }
-
-        return null;
     }
 
     public boolean isEmpty() { return n == 0; }

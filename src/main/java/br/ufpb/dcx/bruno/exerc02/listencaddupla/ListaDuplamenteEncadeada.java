@@ -68,6 +68,7 @@ public class ListaDuplamenteEncadeada<Dado> {
             while (current != null && current.dado != dado) current = current.next;
             if (current != null) {
                 current.prev.next = current.next;
+                current.next.prev = current.prev;
                 n--;
                 return current.dado;
             }
