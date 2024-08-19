@@ -41,8 +41,9 @@ public class ListaDuplamenteEncadeada<Dado> {
             current.prev = newNode;
             newNode.next = current;
             head = newNode;
-            n++;
         }
+
+        n++;
     }
 
 

@@ -8,11 +8,11 @@ public class ListaSimplesmenteEncadeada<Dado> {
 
 
     private class Node {
-        private Dado dado;
-        private Node next = null;
+        private Dado dado; //DADO QUE O NÓ RECEBE
+        private Node next = null; //VAI INDICAR QUAL O PRÓXIMO DESSE NÓ
 
         private Node(Dado dado) {
-            this.dado = dado;
+            this.dado = dado; //ADICIONA
         }
     }
 
@@ -45,9 +45,7 @@ public class ListaSimplesmenteEncadeada<Dado> {
     public Dado get(Dado dado) {
         current = head;
 
-        while (current != null && current.dado != dado) {
-            current = current.next;
-        }
+        while (current != null && current.dado != dado) current = current.next;
 
         if (current == null) return null;
         return current.dado;
