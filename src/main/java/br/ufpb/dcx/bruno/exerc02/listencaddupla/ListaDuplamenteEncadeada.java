@@ -19,13 +19,10 @@ public class ListaDuplamenteEncadeada<Dado> {
     public void add(Dado dado) {
         Node newNode = new Node(dado);
 
-        if (head == null) head = newNode;
-        else {
-            current = head;
-            while (current.next != null) current = current.next;
-            newNode.prev = current;
-            current.next = newNode;
-        }
+        newNode.prev = tail;
+        if (tail == null) head = newNode;
+        else tail.next = newNode;
+        tail = newNode;
 
         n++;
     }
@@ -34,14 +31,10 @@ public class ListaDuplamenteEncadeada<Dado> {
     public void addInicio(Dado dado) {
         Node newNode = new Node(dado);
 
-        if (head == null) head = newNode;
-        else {
-            current = head;
-
-            current.prev = newNode;
-            newNode.next = current;
-            head = newNode;
-        }
+        newNode.next = head;
+        if (head == null) tail = newNode;
+        else head.prev = newNode;
+        head = newNode;
 
         n++;
     }
@@ -53,7 +46,12 @@ public class ListaDuplamenteEncadeada<Dado> {
         else {
             current = head;
 
-            while (current != null && current.dado != dado) current = current.next;
+            while (current != null && current.dado != dado) {
+                current = current.next;
+                /*System.out.println("DEBUG DADO: " + current.dado);
+                System.out.println("DEBUG ATUAL: " + current);
+                System.out.println("DEBUG PROXIMO: " + current.next);*/
+            }
             if (current == null) return null;
             else return current.dado;
         }
@@ -67,8 +65,19 @@ public class ListaDuplamenteEncadeada<Dado> {
 
             while (current != null && current.dado != dado) current = current.next;
             if (current != null) {
-                current.prev.next = current.next;
-                current.next.prev = current.prev;
+                if (current == head) {
+                    head = head.next;
+                    if (head != null) head.prev = null;
+                }
+                else if (current == tail){
+                    tail = tail.prev;
+                    if (tail != null) tail.next = null;
+                }
+                else {
+                    current.prev.next = current.next;
+                    current.next.prev = current.prev;
+                }
+
                 n--;
                 return current.dado;
             }
