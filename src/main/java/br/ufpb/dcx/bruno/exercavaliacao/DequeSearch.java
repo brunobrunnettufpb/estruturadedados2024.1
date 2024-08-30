@@ -179,7 +179,7 @@ public class DequeSearch<Key, Item>implements Iterable<Item> {
         for(Item item : this) s.append(item + " ");
         return  s.toString();
     }
-    public Iterable<Key> keys(){
+    public Iterable<Key> keys() {
         Deque<Key> queue = new Deque<Key>();
         for (No x = Sentinela.prox; x != Sentinela; x = x.prox) queue.push_back(x.chave);
         return queue;
