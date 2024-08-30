@@ -1,5 +1,3 @@
-package br.ufpb.dcx.bruno.exercavaliacao;
-
 /******************************************************************************
  *  Compilation:  javac StdOut.java
  *  Execution:    java StdOut

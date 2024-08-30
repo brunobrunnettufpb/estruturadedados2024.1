@@ -1,5 +1,3 @@
-package br.ufpb.dcx.bruno.exercavaliacao;
-
 import java.util.ListIterator;
 
 public class Deque <Item> implements Iterable<Item> {
@@ -153,7 +151,7 @@ public class Deque <Item> implements Iterable<Item> {
         return s.toString();
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         int n = Integer.parseInt(args[0]);
 
         //add elements 1, ..., n
